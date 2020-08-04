@@ -1,0 +1,55 @@
+
+Showing logs for build [32mcb-kubecd-bdd-nh-1596534694-mas-jmg8q-1[0m stage [32mfrom-build-pack[0m and container [32mcredential-initializer[0m
+{"level":"info","ts":1596535635.8356283,"caller":"creds-init/main.go:44","msg":"Credentials initialized."}
+
+Showing logs for build [32mcb-kubecd-bdd-nh-1596534694-mas-jmg8q-1[0m stage [32mfrom-build-pack[0m and container [32mworking-dir-initializer[0m
+
+Showing logs for build [32mcb-kubecd-bdd-nh-1596534694-mas-jmg8q-1[0m stage [32mfrom-build-pack[0m and container [32mplace-tools[0m
+
+Showing logs for build [32mcb-kubecd-bdd-nh-1596534694-mas-jmg8q-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-cb-kubecd-bdd-nh-1596534694-mas-jmg8q-mqvxr[0m
+{"level":"info","ts":1596535670.430583,"caller":"git/git.go:105","msg":"Successfully cloned https://github.com/cb-kubecd/bdd-nh-1596534694.git @ v0.0.1 in path /workspace/source"}
+{"level":"warn","ts":1596535670.4307017,"caller":"git/git.go:152","msg":"Unexpected error: creating symlink: symlink /tekton/home/.ssh /root/.ssh: file exists"}
+{"level":"info","ts":1596535670.493814,"caller":"git/git.go:133","msg":"Successfully initialized and updated submodules in path /workspace/source"}
+
+Showing logs for build [32mcb-kubecd-bdd-nh-1596534694-mas-jmg8q-1[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-builder-home[0m
+
+Showing logs for build [32mcb-kubecd-bdd-nh-1596534694-mas-jmg8q-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:96fcd46f3af1ae671b890ee6075716809a7ae404
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mcb-kubecd-bdd-nh-1596534694-mas-jmg8q-1[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32mcb-kubecd-bdd-nh-1596534694-mas-jmg8q-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-npmrc[0m
+WARNING: failed to find Secret npm-token in namespace **
+
+Showing logs for build [32mcb-kubecd-bdd-nh-1596534694-mas-jmg8q-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-npm-install[0m
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN REPLACE_ME@1.0.0 No repository field.
+npm WARN REPLACE_ME@1.0.0 No license field.
+
+up to date in 0.386s
+found 0 vulnerabilities
+
+
+Showing logs for build [32mcb-kubecd-bdd-nh-1596534694-mas-jmg8q-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-npm-test[0m
+
+> REPLACE_ME@1.0.0 test /workspace/source
+> echo "no test specified" && exit 0
+
+no test specified
+
+Showing logs for build [32mcb-kubecd-bdd-nh-1596534694-mas-jmg8q-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+E0804 10:07:56.532562      12 aws_credentials.go:77] while getting AWS credentials NoCredentialProviders: no valid providers in chain. Deprecated.
+	For verbose messaging see aws.Config.CredentialsChainVerboseErrors
+[36mINFO[0m[0001] Using dockerignore file: /workspace/source/.dockerignore 
+[36mINFO[0m[0001] Retrieving image manifest node:9-slim        
+E0804 10:07:56.970982      12 metadata.go:154] while reading 'google-dockercfg' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg
+E0804 10:07:56.975004      12 metadata.go:166] while reading 'google-dockercfg-url' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg-url
+[36mINFO[0m[0002] Retrieving image manifest node:9-slim        
+[36mINFO[0m[0004] Built cross stage deps: map[]                
+[36mINFO[0m[0004] Retrieving image manifest node:9-slim        
+[36mINFO[0m[0005] Retrieving image manifest node:9-slim        
+error building image: Get "https://production.cloudflare.docker.com/registry-v2/docker/registry/v2/blobs/sha256/e2/e20bb4abe4eed5a4141638d965dd93617751732cd55a4ed8dee566c8be25667f/data?verify=1596538682-T4G4DgX6YGtDXfo4a20W%2FLPYlP8%3D": read tcp 10.24.2.17:48972->104.18.123.25:443: read: connection reset by peer
+[31m
+Pipeline failed on stage 'from-build-pack' : container 'step-build-container-build'. The execution of the pipeline has stopped.[0m
